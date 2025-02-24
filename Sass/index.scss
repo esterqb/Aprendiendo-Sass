@@ -1,0 +1,47 @@
+$background-color: #ff9aab;
+$width: 30vw;
+$nav-color:#fff8b8;
+
+@mixin centered{
+    display: grid;
+    align-items: center;
+    text-align: center;
+}
+*{
+    $nospace: 0;
+    margin: $nospace;
+    padding:$nospace;
+}
+
+#wrapper{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 15vh 60vh 10vh;
+    grid-template-areas: "nav header"
+                        "nav content"
+                        "nav footer";
+}
+#header{
+    background-color: $background-color;
+    @include centered;
+    grid-area: header;
+
+}
+#nav{
+    background-color: $nav-color;
+    @include centered;
+    grid-area: nav;
+
+}
+#content{
+    @include centered;
+
+    img{
+        width: $width;
+    }
+    grid-area: content;
+}
+#footer{
+    background-color: $background-color;
+    grid-area: footer;
+}
