@@ -1,0 +1,70 @@
+*{
+    @include nospace();
+}
+#wrapper{
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    grid-template-rows: 15vh 70vh 15vh;
+    grid-template-areas: "nav header"
+                        "nav content"
+                        "nav footer";
+}
+#header{
+    background-color: $background-color;
+    @include centered;
+    grid-area: header;
+    
+}
+#nav{
+    background-color: $nav-color;
+    @include centered;
+    grid-area: nav;
+
+}
+#content{
+    @include centered;
+
+    img{
+        width: $width;
+    }
+    grid-area: content;
+}
+#footer{
+    background-color: $background-color;
+    grid-area: footer;
+}
+
+/*MODULOS*/
+#modulos{
+    table{
+        $back-color: #2ced11;
+        color: #3e5a64;
+        font-family: Arial, Helvetica, sans-serif;
+        @include plus;
+        tr,td,th{
+            border: 1px solid #000;
+            height: 4vh;
+            padding:3px;
+            font-weight: normal;
+        }
+        td:nth-child(1){
+            text-align: left;
+
+        }
+        td:nth-child(2){
+            text-align: right;
+        }
+        border-collapse: collapse;
+        width: 50vw;
+        @each $color in $rows{
+            $index: list.index($rows, $color);
+            tr:nth-child(#{$index+1}){
+            background-color: $color;
+            }
+        }
+        .first{
+            background-color: $back-color;
+            font-size: 30px;
+        }
+    }
+}

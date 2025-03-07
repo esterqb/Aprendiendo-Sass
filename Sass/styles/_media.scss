@@ -1,0 +1,60 @@
+@media (min-width: 400px) {
+    #wrapper {
+        grid-template-columns: calc(#{calcularAnchura(0, 1)}vw) calc(#{calcularAnchura(100, 1)}vw);
+        grid-template-areas: "header header"
+                            "content content"
+                            "footer footer";
+    }
+    #nav{
+        display: none;
+    }
+    #modulos{
+        table {
+            width: 75vw;
+            th{
+                font-size: 25px;
+            }
+        }
+    } 
+}
+@media (min-width: 600px) {
+    #wrapper {
+        grid-template-columns: calc(#{calcularAnchura(20, 1)}vw) calc(#{calcularAnchura(80, 1)}vw);
+        grid-template-areas: "header header"
+                            "nav content"
+                            "nav footer";
+
+    }
+    #nav {
+        display: block;
+        @include centered();
+
+    }
+    #modulos{
+        table {
+            width: 75vw;
+            th{
+                font-size: 25px;
+            }
+        }
+    } 
+}
+@media (min-width: 1000px) {
+    #wrapper {
+        display: grid;
+        grid-template-columns: calc(#{calcularAnchura(15, 1)}vw) calc(#{calcularAnchura(85, 1)}vw);
+        grid-template-areas: "nav header"
+                            "nav content"
+                            "nav footer";
+    }
+    #content{
+        table{
+            width: 50vw;
+        }
+    }
+    #nav {
+        display: block;
+        @include centered();
+        height: 100%;
+    }
+}

@@ -1,0 +1,3 @@
+@function calcularAnchura($base, $factor, $unit: vw) {
+    @return $base * $factor + $unit;
+}

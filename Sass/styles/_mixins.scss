@@ -1,0 +1,12 @@
+@mixin centered{
+    display: grid;
+    align-items: center;
+    text-align: center;
+}
+@mixin plus{
+    margin: 0 auto;
+}
+@mixin nospace{
+    margin: 0;
+    padding:0;
+}
