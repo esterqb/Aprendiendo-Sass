@@ -1,0 +1,77 @@
+/// Estilos específicos para pantallas con un ancho mínimo de 400px
+/// Se ajustan las columnas del grid y se establece la altura de los elementos de navegación y el contenido de la tabla.
+///@group Responsive
+@media (min-width: 400px) {
+    #wrapper {
+        /// Definición de las columnas del grid utilizando la función `calcularAnchura` para los tamaños.
+        /// La primera columna tiene un ancho calculado dinámicamente, y la segunda columna ocupa el 100vw.
+        grid-template-columns: calc(#{calcularAnchura(0, 1)}vw) calc(#{calcularAnchura(100, 1)}vw);
+        grid-template-rows: 15vh 5vh 70vh 10vh;
+        grid-template-areas: "header header"
+                            "nav nav"
+                            "content content"
+                            "footer footer";
+    }
+    #nav{
+        @include centrar_flexbox;
+        justify-content: space-around;
+        height: 5vh;
+        ul,li{
+            @include center-inline;
+        }
+    }
+    #modulos{
+        table {
+            width: 75vw;
+            th{
+                font-size: 25px;
+            }
+        }
+    } 
+}
+/// Estilos específicos para pantallas con un ancho mínimo de 600px
+/// Ajusta la disposición de las columnas y las filas del grid, así como el comportamiento de la navegación.
+@media (min-width: 600px) {
+    #wrapper {
+        grid-template-columns: calc(#{calcularAnchura(20, 1)}vw) calc(#{calcularAnchura(80, 1)}vw);
+        grid-template-rows: 15vh 70vh 15vh;;
+        grid-template-areas: "header header"
+                            "nav content"
+                            "nav footer";
+
+    }
+    #nav {
+        display: block;
+        @include centered();
+        height: 85vh;
+    }
+    #modulos{
+        table {
+            width: 75vw;
+            th{
+                font-size: 25px;
+            }
+        }
+    } 
+}
+/// Estilos específicos para pantallas con un ancho mínimo de 1000px
+/// Cambia la disposición del grid para una mayor separación entre la navegación y el contenido.
+@media (min-width: 1000px) {
+    #wrapper {
+        display: grid;
+        grid-template-columns: calc(#{calcularAnchura(15, 1)}vw) calc(#{calcularAnchura(85, 1)}vw);
+        grid-template-areas: "nav header"
+                            "nav content"
+                            "nav footer";
+    }
+    #content{
+        table{
+            width: 50vw;
+        }
+    }
+    #nav {
+        display: block;
+        @include centered();
+        height: 100%;
+    }
+}

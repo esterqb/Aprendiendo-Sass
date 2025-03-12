@@ -1,0 +1,34 @@
+///Color de fondo utilizado en varias secciones de la página.
+///Esta variable define un color de fondo en tonos rosados (#ff9aab).
+///@example
+///$background-color: #ff9aab;
+/// @type Length
+/// @group Variables
+$background-color: #ff9aab;
+///El ancho de los elementos, definido como un porcentaje del ancho de la ventana.
+///Esta variable se utiliza para establecer el tamaño de imágenes y otros elementos que requieren un ancho dinámico.
+///El valor se define en `vw` (viewport width), lo que significa que el ancho será un 30% del ancho de la ventana.
+///@type width
+///@group Variables
+$width: 30vw;
+///Color de fondo utilizado en la barra de navegación.
+///@type color
+/// @group variables
+$nav-color:#fff8b8;
+///Tamaños de fuente para los encabezados `h1`, `h2` y `h3`.
+///Esta variable es un mapa que contiene los tamaños de fuente en píxeles para los tres tipos de encabezados.
+///@type size
+///@group variables
+$headings: (h1: 40px, h2:35px, h3: 30px);
+///Lista de colores utilizados para las filas de una tabla.
+///Cada color en esta lista se utiliza para alternar el fondo de las filas en una tabla, proporcionando un diseño visualmente atractivo.
+///Los colores son los siguientes:
+/// - Fila 1: #f11b0d (rojo)
+/// - Fila 2: #ef0fe2 (púrpura)
+/// - Fila 3: #11eedc (verde claro)
+/// - Fila 4: #e5ee11 (amarillo)
+/// - Fila 5: #888377 (gris)
+/// - Fila 6: #f0960e (naranja)
+///@type color
+///@group variable
+$rows:#f11b0d,#ef0fe2,#11eedc,#e5ee11,#888377,#f0960e;

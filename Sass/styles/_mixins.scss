@@ -1,0 +1,38 @@
+/// Centra un elemento en su contenedor utilizando `grid`.
+/// @access public
+/// @group Mixins
+@mixin centered{
+    display: grid;
+    align-items: center;
+    text-align: center;
+}
+/// Centra un bloque dentro de su padre utilizando flexbox.
+/// @access public
+/// @group Mixins
+@mixin centrar_flexbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/// Centra elementos en línea dentro de un bloque.
+/// @access public
+/// @group Mixins
+@mixin center-inline {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+/// Aplica `margin: 0 auto` para centrar un elemento horizontalmente.
+/// @access public
+/// @group Mixins
+@mixin plus{
+    margin: 0 auto;
+}
+/// Elimina los márgenes y el padding de un elemento.
+/// Se usa para resetear el espacio en los componentes.
+/// @access public
+/// @group Mixins
+@mixin nospace{
+    margin: 0;
+    padding:0;
+}

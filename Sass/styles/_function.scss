@@ -1,0 +1,18 @@
+/// Calcula la anchura basada en un valor base, un factor de multiplicación y una unidad.
+/// @group Function
+/// La función toma tres parámetros:
+/// - `$base`: El valor base sobre el cual se va a aplicar el factor.
+/// - `$factor`: El factor multiplicador que ajustará la anchura base.
+/// - `$unit`: La unidad que se usará para la anchura calculada (por defecto, `vw`).
+///
+/// La función retorna el valor calculado como una expresión que multiplica el valor base por el factor y luego le añade la unidad especificada.
+///
+/// @param {Number} $base El valor base de la anchura.
+/// @param {Number} $factor El factor de multiplicación.
+/// @param {String} $unit (Opcional) La unidad que se usará para la anchura calculada.
+///                        El valor predeterminado es `vw`.
+///
+/// @return {String} La anchura calculada con la unidad especificada.
+@function calcularAnchura($base, $factor, $unit: vw) {
+    @return $base * $factor + $unit;
+}

@@ -1,0 +1,89 @@
+/// Estilos globales que eliminan los márgenes y el padding en todos los elementos
+/// Usando el mixin `nospace` para asegurarse de que no haya espacios no deseados.
+/// @group Global styles
+*{
+    @include nospace();
+}
+/// Estilos para el contenedor principal #wrapper
+/// Se utiliza un grid para estructurar los elementos de la página en 3 filas y 2 columnas.
+#wrapper{
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    grid-template-rows: 15vh 70vh 15vh;
+    grid-template-areas: "nav header"
+                        "nav content"
+                        "nav footer";
+}
+/// Estilos para el encabezado #header
+/// Define el color de fondo y centra el contenido usando el mixin `centered`.
+/// Asigna el área del grid correspondiente al encabezado.
+#header{
+    background-color: $background-color;
+    @include centered;
+    grid-area: header;
+    
+}
+/// Estilos para la barra de navegación #nav
+/// Define el color de fondo y centra el contenido.
+/// Asigna el área del grid correspondiente a la navegación.
+#nav{
+    background-color: $nav-color;
+    @include centered;
+    grid-area: nav;
+
+}
+/// Estilos para el contenido #content
+/// Centra el contenido de la sección, especialmente las imágenes dentro de ella,
+/// y asigna el área del grid correspondiente al contenido.
+#content{
+    @include centered;
+    img{
+        width: $width;
+    }
+    grid-area: content;
+}
+/// Estilos para el pie de página #footer
+/// Define el color de fondo y asigna el área del grid correspondiente al pie de página.
+#footer{
+    background-color: $background-color;
+    grid-area: footer;
+}
+
+/*MODULOS*/
+#modulos{
+    table{
+        /// Establece los colores y las fuentes para la tabla.
+        $back-color: #2ced11;
+        color: #3e5a64;
+        font-family: Arial, Helvetica, sans-serif;
+        /// Aplica el mixin `plus` para posibles estilos adicionales.
+        @include plus;
+        tr,td,th{
+            border: 1px solid #000;
+            height: 4vh;
+            padding:3px;
+            font-weight: normal;
+        }
+        td:nth-child(1){
+            text-align: left;
+
+        }
+        td:nth-child(2){
+            text-align: right;
+        }
+        border-collapse: collapse;
+        width: 50vw;
+        /// Usa el bucle `@each` para aplicar colores alternos a las filas de la tabla
+        /// según los valores definidos en la lista `$rows`.
+        @each $color in $rows{
+            $index: list.index($rows, $color);
+            tr:nth-child(#{$index+1}){
+            background-color: $color;
+            }
+        }
+        .first{
+            background-color: $back-color;
+            font-size: 30px;
+        }
+    }
+}

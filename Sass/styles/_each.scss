@@ -1,0 +1,9 @@
+/// Itera sobre los elementos de la variable $headings para aplicar estilos a cada encabezado específico según su tamaño. Los tamaños son definidos dentro del mapa $headings.
+///Ajusta la propiedad `font-size` de cada encabezado según el valor asociado al tag. También establece que el peso de la fuente sea `normal`.
+/// @param {Map} $headings Un mapa con los tags de encabezado y sus tamaños correspondientes. Cada clave es el nombre de un tag (h1, h2, etc.) y cada valor es el tamaño de la fuente que se asignará a ese tag.
+@each $tag, $size in $headings {
+    #{$tag} {
+      font-size: $size;
+      font-weight:normal;
+    }
+}
