@@ -1,6 +1,0 @@
-@each $tag, $size in $headings {
-    #{$tag} {
-      font-size: $size;
-      font-weight:normal;
-    }
-}
